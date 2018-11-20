@@ -1,0 +1,68 @@
+<!--pages/vovel/vovel.wxml-->
+<view class='container'>
+  <!-- 滚动视图 -->
+  <view class='customSwiper'>
+    <swiper class='banner' autoplay='true' interval='5000' duration='300' bindchange='switchTab'>
+      <block wx:for="{{headerArr}}" wx:key="key">
+        <swiper-item>
+          <image style='width:100%;height:100%;' src="{{baseImgUrl+item.cover}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='tab'>
+      <block wx:for = "{{headerArr}}" wx:key="{{key}}">
+        <view wx:if="{{item.selected}}"  class='tab-item selected'></view>
+        <view wx:else class="tab-item"></view>
+      </block>
+    </view>
+  </view>
+  <!-- 菜单 -->
+  <view class='menuList' wx:if="{{menuArr}}">
+    <block wx:for="{{menuArr}}" wx:key="key">
+      <view class='menu_item'>
+        <view>
+          <block wx:if="{{item.icon}}">
+            <image src='{{baseImgUrl+item.icon}}'></image>
+              </block>
+                <block wx:else>
+                  <image src="http://temp.im/50x30"></image>
+          </block>
+        </view>
+        <view wx:if="{{item.title}}">
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 分类列表 -->
+  <view class='cate' wx:if="{{dataArr}}">
+    <block wx:for="{{dataArr}}" wx:key="key">
+
+      <view class='sub_cate'>
+        <view class='sub_cate_title'>
+        <text>{{item.name}}</text>
+        </view>
+        <block wx:for = "{{item.cates}}" wx:key="key">
+          <view class='sub_cate_item'>
+            <navigator url='../list/index?name=item.name'>
+              <view>
+                <block wx:if="{{item.bookCover[0]}}">
+                  <image src='{{baseImgUrl+item.bookCover[0]}}'></image>
+                </block>
+                <block wx:else>
+                  <image src="http://temp.im/50x30"></image>
+                </block>
+              </view>
+              <view wx:if="{{item.name}}">
+                <text>{{item.name}}</text>
+              </view>
+              <view class='line_view'></view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+
+    </block>
+  </view>
+  <view wx:else>暂无数据</view>
+</view>

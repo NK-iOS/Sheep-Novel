@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/vovel/vovel",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/bookshelf/bookshelf",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFBF00",
+    "navigationBarTitleText": "放羊小说",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#FFBF00",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/vovel/vovel",
+        "iconPath": "image/home_normal.png",
+        "selectedIconPath": "image/home_highlight.png",
+        "text": "小说"
+      },
+      {
+        "pagePath": "pages/bookshelf/bookshelf",
+        "iconPath": "image/account_normal.png",
+        "selectedIconPath": "image/account_highlight.png",
+        "text": "书架"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "image/message_normal.png",
+        "selectedIconPath": "image/message_highlight.png",
+        "text": "搜索"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}
